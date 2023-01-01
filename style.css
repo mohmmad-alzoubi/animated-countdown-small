@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.parent.hide {
+    display: none;
+}
+
+.count {
+    font-size: 50px;
+    color: #2196f3;
+    width: 150px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.count .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    rotate: 140deg;
+    transform-origin: bottom center;
+}
+
+.count .number.active {
+    rotate: 0deg;
+    animation: in .5s ease-in-out 1;
+}
+
+@keyframes in {
+    0% {
+        rotate: 140deg;
+    }
+
+    30% {
+        rotate: -10deg;
+    }
+
+    60% {
+        rotate: 10deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+.count .number.inactive {
+    rotate: -140deg;
+    animation: out .5s ease-in-out 1;
+}
+
+@keyframes out {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -140deg;
+    }
+}
+
+.ready {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: bisque;
+    position: relative;
+    z-index: 20;
+}
+
+.final {
+    text-align: center;
+}
+
+.final.hide {
+    display: none;
+}
+
+.final .go {
+    font-size: 42px;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.final .btn {
+    padding: 5px;
+    outline: none;
+    width: 100px;
+    font-size: 18px;
+}
